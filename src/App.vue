@@ -25,10 +25,10 @@
 </template>
 
 <script>
-import message from "@/components/Message.vue";
-import newNote from "@/components/NewNote.vue";
-import notes from "@/components/Notes.vue";
-import search from "@/components/Search.vue";
+import message from "@/components/Message";
+import newNote from "@/components/NewNote";
+import notes from "@/components/Notes";
+import search from "@/components/Search";
 
 
 export default {
