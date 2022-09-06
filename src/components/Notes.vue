@@ -1,6 +1,6 @@
 <template>
   <div class="notes">
-    <div class="note" :class="{full: !grid}" v-for="(note, index) in notes" :key="index">
+    <div class="note" :class="{full: !grid}" v-for="(note, index) in notes" :key="index" :style="`background-color: ${getColor(note.status)} ;`">
       <div class="note-header" :class="{full: !grid}">
         <p>{{ note.title }}</p>
         <p style="cursor:pointer" @click="removeNote(index)">x</p>
@@ -28,6 +28,16 @@ export default {
     methods: {
         removeNote (index) {
             this.$emit('remove', index)
+        },
+        getColor(status) {
+            if(status === '0') {
+                return 'white' 
+            }else if (status === '1') {
+                return 'gold'
+            }else {
+                return 'red'
+            }
+            
         }
     }
 }

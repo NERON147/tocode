@@ -47,22 +47,26 @@ export default {
       note: {
         title: "",
         descr: "",
+        status: "0",
       },
       notes: [
         {
           title: "First Note",
           descr: "Description for first note",
           date: new Date(Date.now()).toLocaleString(),
+          status: '0',
         },
         {
           title: "Second Note",
           descr: "Description for second note",
           date: new Date(Date.now()).toLocaleString(),
+          status: '1',
         },
         {
           title: "Third Note",
           descr: "Description for third note",
           date: new Date(Date.now()).toLocaleString(),
+          status: '2',
         },
       ],
     };
@@ -87,7 +91,7 @@ export default {
   methods: {
     addNote() {
       // console.log(this.note)
-      let { title, descr } = this.note;
+      let { title, descr, status } = this.note;
 
       if (title === "") {
         this.message = "title can`t be blank!";
@@ -98,10 +102,12 @@ export default {
         title,
         descr,
         date: new Date(Date.now()).toLocaleString(),
+        status,
       });
       this.message = null;
       this.note.title = "";
       this.note.descr = "";
+      this.note.status = "0";
     },
     removeNote(index) {
       this.notes.splice(index, 1);
